@@ -1,0 +1,205 @@
+/* ------------------------------
+   ROOT & GLOBAL SETTINGS
+--------------------------------*/
+:root {
+  --bg: #f8f5f2;              /* soft editorial cream */
+  --text: #1b1b1b;            /* high contrast black */
+  --accent: #8a1c1c;          /* deep vintage red (optional) */
+  --max-width: 1200px;
+  --serif: "Georgia", "Times New Roman", serif;
+  --sans: "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------------
+   LAYOUT WRAPPER
+--------------------------------*/
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ------------------------------
+   HEADER / NAV
+--------------------------------*/
+header {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ------------------------------
+   TYPOGRAPHY
+--------------------------------*/
+h1, h2, h3 {
+  font-family: var(--serif);
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  max-width: 65ch;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ------------------------------
+   EDITORIAL TWO-PAGE SPREAD LAYOUT
+--------------------------------*/
+
+/* Container replicating the Vogue 1949 left/right layout */
+.spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 4rem 0;
+}
+
+/* Blank image holders — you will add background images later */
+.image-box {
+  width: 100%;
+  height: 500px;
+  background-color: #e2ded8;  /* soft placeholder beige */
+  border: 1px solid #ccc;
+}
+
+/* Text block beside images */
+.text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Caption under images */
+.caption {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* ------------------------------
+   RESPONSIVE — MOBILE (≤480px)
+--------------------------------*/
+@media (max-width: 480px) {
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .spread {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .image-box {
+    height: 350px;
+  }
+}
+
+/* ------------------------------
+   DESKTOP LARGE (≥1025px)
+--------------------------------*/
+@media (min-width: 1025px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .spread {
+    gap: 4rem;
+  }
+
+  .image-box {
+    height: 600px;
+  }
+}
